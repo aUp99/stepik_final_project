@@ -11,9 +11,9 @@ class ProductPage(BasePage):
     def should_be_book_name(self):
         book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
         book_name_in_basket = self.browser.find_element(*ProductPageLocators.BOOK_NAME_IN_BASKET).text
-        assert book_name in book_name_in_basket, "Book name is not found"
+        assert book_name == book_name_in_basket, "Book name is not found"
 
     def should_be_price_book(self):
         price_book = self.browser.find_element(*ProductPageLocators.PRICE_BOOK).text
         price_book_in_basket = self.browser.find_element(*ProductPageLocators.PRICE_BOOK_IN_BASKET).text
-        assert price_book in price_book_in_basket, "The price of the book does not match"
+        assert price_book == price_book_in_basket, "The price of the book does not match"
